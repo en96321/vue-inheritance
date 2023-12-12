@@ -1,8 +1,9 @@
 {
   "name": "vue-inheritance",
-  "version": "1.0.1-beta.1",
+  "version": "1.0.1-beta.2",
   "description": "vue inheritance",
   "main": "src/index.js",
+  "types": "src/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
