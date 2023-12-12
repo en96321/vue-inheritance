@@ -19,10 +19,11 @@ export class VueInheritance {
   static implement = VueInheritance.extend
 
   extend (extendOptions) {
+    const cloneExtendOptions = clone(extendOptions)
     try {
-      this.props = mergeRight(this.props, extendOptions.props)
-      this.methods = mergeRight(this.methods, extendOptions.methods)
-      this.computed = mergeRight(this.computed, extendOptions.computed)
+      this.props = mergeRight(this.props, cloneExtendOptions.props)
+      this.methods = mergeRight(this.methods, cloneExtendOptions.methods)
+      this.computed = mergeRight(this.computed, cloneExtendOptions.computed)
       return this
     } catch (e) {
       throw new TypeError('extend error')
