@@ -1,0 +1,31 @@
+{
+  "name": "vue-inheritance",
+  "version": "1.0.0",
+  "description": "vue inheritance",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oceanTsai/vue-Inheritance.git"
+  },
+  "keywords": [
+    "vue",
+    "extend",
+    "inherit",
+    "inhertiance"
+  ],
+  "author": "ocean.tsai",
+  "contributors": [
+    "pedro.yang"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/oceanTsai/vue-Inheritance/issues"
+  },
+  "homepage": "https://github.com/oceanTsai/vue-Inheritance#readme",
+  "dependencies": {
+    "ramda": "^0.29.1"
+  }
+}
