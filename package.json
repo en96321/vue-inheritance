@@ -1,6 +1,6 @@
 {
   "name": "vue-inheritance",
-  "version": "1.0.1-beta.3",
+  "version": "1.0.1-beta.4",
   "description": "vue inheritance",
   "main": "src/index.js",
   "types": "src/index.d.ts",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/oceanTsai/vue-Inheritance.git"
+    "url": "git+https://github.com/en96321/vue-inheritance.git"
   },
   "keywords": [
     "vue",
@@ -17,16 +17,16 @@
     "inherit",
     "inhertiance"
   ],
-  "author": "ocean.tsai",
+  "author": "pedro.yang",
   "contributors": [
-    "pedro.yang"
+    "ocean.tsai"
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/oceanTsai/vue-Inheritance/issues"
+    "url": "https://github.com/en96321/vue-Inheritance/issues"
   },
-  "homepage": "https://github.com/oceanTsai/vue-Inheritance#readme",
+  "homepage": "https://github.com/en96321/vue-Inheritance#readme",
   "dependencies": {
-    "ramda": "^0.29.1"
+    "ramda": "0.29.1"
   }
 }
