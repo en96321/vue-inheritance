@@ -6,7 +6,7 @@ vue-inheritance is an npm package designed for Vue.js projects. It provides a co
 
 **Installation**
 
-In your Vue project, install vue-inheritance using the following command:
+install vue-inheritance using the following command:
 
 ```bash
 npm install vue-inheritance
@@ -57,7 +57,7 @@ export const ILoading = {
 
 
 //IButton 
-export const ILoading = VueInheritance
+export const IButton = VueInheritance
   .extend(IControl)
   .extend(ITheme)
   .extend({
