@@ -1,12 +1,18 @@
 import { VueInheritance } from '../src/index'
 
 const IButton = {
+  data () {
+    return {
+      style: 'test'
+    }
+  },
   props: {
     label: {
       type: String,
       default: ''
     }
   },
+  emits: ['click'],
   methods: {
     onClick () {}
   },
@@ -18,6 +24,12 @@ const IButton = {
 }
 
 const IControl = {
+  data () {
+    return {
+      label: 'control label'
+    }
+  },
+  emits: ['click', 'change'],
   props: {
     disabled: {
       type: Boolean,
@@ -32,7 +44,10 @@ const IControl = {
 }
 
 let extended = VueInheritance.extend(IButton).implement(IControl)
-
+console.log('test should merge data')
+console.log(extended.data())
+console.log('test should merge emits')
+console.log(extended.emits)
 console.log('test should merge props')
 console.log(extended.props)
 console.log('test should merge computed')
