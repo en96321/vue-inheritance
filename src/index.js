@@ -1,6 +1,6 @@
-import { mergeRight, clone, defaultTo, uniq, concat } from 'ramda'
+import { mergeRight, clone, defaultTo, uniq, concat, is } from 'ramda'
 
-const isFunction = val => typeof val === 'function'
+const isFunction = is(Function)
 
 const parseArray = defaultTo([])
 
