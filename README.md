@@ -56,17 +56,23 @@ export const ILoading = {
 }
 
 
-//IButton 
-export const IButton = VueInheritance
-  .extend(IControl)
-  .extend(ITheme)
-  .extend({
-    methods: {
-      onClick(e) {
-        this.$emit('click', e)
-      }
+// IButton 
+export const IButton = {
+  extends: VueInheritance.implement(IControl).implement(ITheme)
+  props: {
+    size: {
+      type: String,
+      default: 'lg'
     }
-  })
+  },
+
+  methods: {
+  }
+}
+
+
+
+  
 ```
 
 **Implement**
