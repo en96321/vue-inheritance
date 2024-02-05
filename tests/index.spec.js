@@ -1,46 +1,83 @@
-import { VueInheritance } from '../src/index'
+import VueInheritance from '../src/index.js' // 請確保路徑正確
+import { IButton as ControlGroupIButton } from './controlGroup/IButton.js'
+import { IButton as ExperimentalGroupIButton } from './experimentalGroup/IButton.js'
 
-const IButton = {
-  props: {
-    label: {
-      type: String,
-      default: ''
-    }
-  },
-  methods: {
-    onClick () {}
-  },
-  computed: {
-    hasLabel () {
-      return true
-    }
-  }
-}
+describe('VueInheritance', () => {
+  test('The implementation method should return an object with isShow', () => {
+    const IVisibility = VueInheritance.implement({
+      props: {
+        isShow: {
+          type: Boolean,
+          default: true
+        }
+      }
+    })
 
-const IControl = {
-  props: {
-    disabled: {
+    expect(IVisibility).toHaveProperty('props.isShow', {
       type: Boolean,
-      default: false
+      default: true
+    })
+
+    expect(IVisibility).toEqual({
+      extends: null,
+      props: {
+        isShow: {
+          type: Boolean,
+          default: true
+        }
+      }
+    })
+  })
+
+  test('The experimentalGroupIButton test', () => {
+    expect(ExperimentalGroupIButton).toHaveProperty('extends', {
+      extends: {
+        props: {
+          visible: {
+            type: Boolean,
+            default: true
+          }
+        }
+      },
+      props: {
+        borderSize: {
+          type: Number,
+          default: '1px'
+        }
+      }
+    })
+    expect(ExperimentalGroupIButton).toHaveProperty('props', {
+      buttonSize: {
+        type: String,
+        default: 'sm'
+      }
+    })
+    expect(ExperimentalGroupIButton).toHaveProperty('methods.onClick')
+  })
+})
+
+test('The ControlGroupIButton test', () => {
+  expect(ControlGroupIButton).toHaveProperty('extends', {
+    extends: {
+      props: {
+        visible: {
+          type: Boolean,
+          default: true
+        }
+      }
+    },
+    props: {
+      borderSize: {
+        type: Number,
+        default: '1px'
+      }
     }
-  },
-  methods: {
-    onClick () {
-      return 'has implement'
+  })
+  expect(ControlGroupIButton).toHaveProperty('props', {
+    buttonSize: {
+      type: String,
+      default: 'sm'
     }
-  }
-}
-
-let extended = VueInheritance.extend(IButton).implement(IControl)
-
-console.log('test should merge props')
-console.log(extended.props)
-console.log('test should merge computed')
-console.log(extended.computed)
-console.log('test should cover methods')
-console.log(extended.methods.onClick())
-console.log('test call by reference')
-extended.props.label = { type: String, default: 'change by reference' }
-console.log('extended', extended.props.label)
-console.log('origin', IButton.props.label)
-
+  })
+  expect(ControlGroupIButton).toHaveProperty('methods.onClick')
+})
