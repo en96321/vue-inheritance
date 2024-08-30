@@ -1,13 +1,13 @@
 import { clone, isNil, isNotNil, has, isEmpty } from 'ramda'
 
 /**
- * Vue3Component
+ * VueInheritanceComponent
  * @class
  * @private
  * @author pedro.yang、 ocean.tsai
  * @description
  */
-class Vue3Component {
+class VueInheritanceComponent {
   /**
    * InvalidInterfaceKeys
    * @static
@@ -33,7 +33,7 @@ class Vue3Component {
    */
   static validateInterface (interfaceDefine) {
     // hasIn 是包含 prototype has 不會含 prototype
-    return Vue3Component.InvalidInterfaceKeys.every((key) => !has(key, interfaceDefine))
+    return VueInheritanceComponent.InvalidInterfaceKeys.every((key) => !has(key, interfaceDefine))
   }
 
   /**
@@ -49,7 +49,7 @@ class Vue3Component {
       throw new Error('Interface cannot be null or undefined.')
     } else if (isEmpty(interfaceDefine)) {
       throw new Error('Interface cannot be empty object.')
-    } else if (!Vue3Component.validateInterface(interfaceDefine)) {
+    } else if (!VueInheritanceComponent.validateInterface(interfaceDefine)) {
       throw new Error('The incoming parameter must be an interface.')
     }
   }
@@ -63,13 +63,13 @@ class Vue3Component {
    * @description
    */
   static extend (componentDefine, override) {
-    const vue3Component = isNotNil(componentDefine)
-      ? Object.assign(new Vue3Component(), clone(componentDefine))
-      : new Vue3Component()
+    const VueInheritanceComponent = isNotNil(componentDefine)
+      ? Object.assign(new VueInheritanceComponent(), clone(componentDefine))
+      : new VueInheritanceComponent()
 
     return isNotNil(override)
-      ? Object.assign(vue3Component, clone(override))
-      : vue3Component
+      ? Object.assign(VueInheritanceComponent, clone(override))
+      : VueInheritanceComponent
   }
 
   /**
@@ -81,8 +81,8 @@ class Vue3Component {
    * @description Vue's interface can only define props、methods.
    */
   static implement (interfaceDefine) {
-    Vue3Component.typeCheck(interfaceDefine)
-    return Vue3Component.extend(interfaceDefine)
+    VueInheritanceComponent.typeCheck(interfaceDefine)
+    return VueInheritanceComponent.extend(interfaceDefine)
   }
 
   // eslint-disable-next-line no-useless-constructor
@@ -105,7 +105,7 @@ class Vue3Component {
    * @description Vue's interface can only define props、methods.
    */
   implement (interfaceDefine) {
-    Vue3Component.typeCheck(interfaceDefine)
+    VueInheritanceComponent.typeCheck(interfaceDefine)
 
     if (isNil(this.extends) || isEmpty(this.extends)) {
       this.extends = clone(interfaceDefine)
@@ -128,8 +128,8 @@ class Vue3Component {
  * @description
  */
 const VueInheritance = Object.freeze({
-  extend: Vue3Component.extend,
-  implement: Vue3Component.implement
+  extend: VueInheritanceComponent.extend,
+  implement: VueInheritanceComponent.implement
 })
 
 export default VueInheritance
