@@ -1,6 +1,6 @@
 {
   "name": "vue-inheritance",
-  "version": "1.0.1-beta.5",
+  "version": "1.0.1-beta.6",
   "description": "vue inheritance",
   "main": "src/index.js",
   "types": "src/index.d.ts",
