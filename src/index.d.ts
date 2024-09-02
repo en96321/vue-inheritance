@@ -18,48 +18,41 @@ export interface IVueComponent {
  * VueInheritanceComponent
  * @description VueInheritanceComponent class
  * @class
- * @example
- * const MyComponent = VueInheritance.extend(UIComponent).implement(IScrollable)
- *  
  */
-export interface VueInheritanceComponent extends IVueComponent {
-  /**
-   * extend
-   * @description Extend, Should only be used once
-   * @param component {IVueComponent} - Vue component
-   * @returns {VueInheritanceComponent} - VueInheritanceComponent
-   */
-  extend(component: IVueComponent): VueInheritanceComponent;
+export class VueInheritanceComponent {
   /**
    * implement
-   * @param component {IVueComponent} - Vue component
-   * @returns {VueInheritanceComponent} - VueInheritanceComponent
+   * @param {IVueComponent} interfaceDefine - Vue component
+   * @returns {VueInheritanceComponent} VueInheritanceComponent
    */
-  implement(component: IVueComponent): VueInheritanceComponent;
+  implement(interfaceDefine: IVueComponent): VueInheritanceComponent;
 }
 
 /**
  * VueInheritance
  * @description VueInheritance
  * @example
- * const MyComponent = VueInheritance.extend(UIComponent).implement(IScrollable)
- *  
+ * export default {
+ *  name: 'MyComponent',
+ *  extends: VueInheritance.extend(UIComponent).implement(IScrollable),
+ *  ...
+ * }
  */
 declare const VueInheritance: {
 
   /**
    * extend
    * @description Extend, Should only be used once
-   * @param component {IVueComponent} - Vue component
-   * @returns {VueInheritanceComponent} - VueInheritanceComponent
+   * @param {IVueComponent} componentDefine - Vue component
+   * @returns {VueInheritanceComponent} VueInheritanceComponent
    */
-  extend(component: IVueComponent): VueInheritanceComponent;
+  extend(componentDefine: IVueComponent): VueInheritanceComponent;
   /**
    * implement
-   * @param component {IVueComponent} - Vue component
-   * @returns {VueInheritanceComponent} - VueInheritanceComponent
+   * @param {IVueComponent} interfaceDefine - Vue component
+   * @returns {VueInheritanceComponent} VueInheritanceComponent
    */
-  implement(component: IVueComponent): VueInheritanceComponent;
+  implement(interfaceDefine: IVueComponent): VueInheritanceComponent;
 }
 
 export default VueInheritance;
