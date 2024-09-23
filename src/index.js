@@ -63,13 +63,13 @@ class VueInheritanceComponent {
    * @description
    */
   static extend (componentDefine, override) {
-    const VueInheritanceComponent = isNotNil(componentDefine)
+    const vueInheritanceComponent = isNotNil(componentDefine)
       ? Object.assign(new VueInheritanceComponent(), clone(componentDefine))
       : new VueInheritanceComponent()
 
     return isNotNil(override)
-      ? Object.assign(VueInheritanceComponent, clone(override))
-      : VueInheritanceComponent
+      ? Object.assign(vueInheritanceComponent, clone(override))
+      : vueInheritanceComponent
   }
 
   /**
