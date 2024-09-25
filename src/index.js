@@ -119,6 +119,8 @@ class VueInheritanceComponent {
     }
     return this
   }
+
+  extend = this.implement
 }
 
 /**
