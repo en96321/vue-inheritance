@@ -21,6 +21,13 @@ export interface IVueComponent {
  */
 export class VueInheritanceComponent {
   /**
+   * extend
+   * @description Extend, Should only be used once
+   * @param {IVueComponent} componentDefine - Vue component or interface
+   * @returns {VueInheritanceComponent} VueInheritanceComponent
+   */
+  extend(componentDefine: IVueComponent): VueInheritanceComponent;
+  /**
    * implement
    * @param {IVueComponent} interfaceDefine - Vue component
    * @returns {VueInheritanceComponent} VueInheritanceComponent
@@ -43,7 +50,7 @@ declare const VueInheritance: {
   /**
    * extend
    * @description Extend, Should only be used once
-   * @param {IVueComponent} componentDefine - Vue component
+   * @param {IVueComponent} componentDefine - Vue component or interface
    * @returns {VueInheritanceComponent} VueInheritanceComponent
    */
   extend(componentDefine: IVueComponent): VueInheritanceComponent;
